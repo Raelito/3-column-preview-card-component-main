@@ -1,0 +1,12 @@
+:root {
+  --clr-primary-orange: hsl(31, 77%, 52%);
+  --clr-primary-darkcyan: hsl(184, 100%, 22%);
+  --clr-primary-verydarkcyan: hsl(179, 100%, 13%);
+  --clr-neutral-transparentwhite: hsla(0, 0%, 100%, 0.75);
+  --clr-neutral-verylightgray: hsl(0, 0%, 95%);
+  --fsz-body: rem(15);
+}
+
+body {
+  font-size: var(--fsz-body);
+}/*# sourceMappingURL=min.css.map */

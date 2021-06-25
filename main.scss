@@ -1,0 +1,133 @@
+//CONVERT PX TO REM
+@function rem($pixel, $rem: 16) {
+  @return ($pixel / $rem) * 1rem;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+:root {
+  --clr-primary-orange: hsl(31, 77%, 52%);
+  --clr-primary-darkcyan: hsl(184, 100%, 22%);
+  --clr-primary-verydarkcyan: hsl(179, 100%, 13%);
+
+  --clr-neutral-transparentwhite: hsla(0, 0%, 100%, 0.75); //paragraphs
+  --clr-neutral-verylightgray: hsl(0, 0%, 95%); //background, headings, buttons
+
+  --ff-body: "Lexend Deca", sans-serif;
+  --ff-heading: "Big Shoulders Display", cursive;
+
+  --fsz-body: 15px;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  font-size: var(--fsz-body);
+  font-family: var(--ff-body);
+  font-weight: 400;
+  margin: rem(88) rem(24);
+}
+
+.card {
+  > .container {
+    > .item {
+      padding: rem(48);
+      > .icon {
+        &-sedans {
+          content: url("images/icon-sedans.svg");
+        }
+        &-suvs {
+          content: url("images/icon-suvs.svg");
+        }
+        &-luxury {
+          content: url("images/icon-luxury.svg");
+        }
+      }
+      > .heading {
+        font-family: var(--ff-heading);
+        font-size: rem(40);
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--clr-neutral-verylightgray);
+        margin-bottom: rem(28);
+      }
+      > .body {
+        color: var(--clr-neutral-transparentwhite);
+        line-height: 1.7;
+        margin-bottom: rem(22);
+      }
+      > .button {
+        font-size: rem(16);
+        width: rem(148);
+        height: rem(48);
+        border: 0;
+        border-radius: rem(32);
+        &:hover {
+          color: var(--clr-neutral-verylightgray);
+          border: 2px solid var(--clr-neutral-transparentwhite);
+          background-color: transparent;
+        }
+
+        &-orange {
+          color: var(--clr-primary-orange);
+        }
+        &-dark-cyan {
+          color: var(--clr-primary-darkcyan);
+        }
+        &-very-dark-cyan {
+          color: var(--clr-primary-verydarkcyan);
+        }
+      }
+      &-orange {
+        background-color: var(--clr-primary-orange);
+        border-radius: rem(8) rem(8) 0 0;
+      }
+      &-dark-cyan {
+        background-color: var(--clr-primary-darkcyan);
+      }
+      &-very-dark-cyan {
+        background-color: var(--clr-primary-verydarkcyan);
+        border-radius: 0 0 rem(8) rem(8);
+      }
+    }
+  }
+}
+
+@media (min-width: rem(768)) {
+  body {
+    display: grid;
+    place-items: center;
+    font-size: var(--fsz-body);
+    font-family: var(--ff-body);
+    font-weight: 400;
+    margin: rem(88) rem(24);
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .card {
+    > .container {
+      display: flex;
+
+      > .item {
+        max-width: rem(306);
+
+        > .body {
+          max-width: rem(196);
+          margin-bottom: rem(88);
+        }
+        &-orange {
+          background-color: var(--clr-primary-orange);
+          border-radius: rem(8) 0 0 rem(8);
+        }
+        &-very-dark-cyan {
+          background-color: var(--clr-primary-verydarkcyan);
+          border-radius: 0 rem(8) rem(8) 0;
+          > .body {
+            max-width: rem(212);
+          }
+        }
+      }
+    }
+  }
+} /*END MEDIA*/
